@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無料相談・お問い合わせ | ユーザフルビジネス</title>
+    <link rel="stylesheet" type="text/css" href="https://my75p.com/p/format_css?item_id=oBFtTlYj&format=div&form_align=&label_align=&radio_float=&checkbox_float=&label_width=0&input_width=0&theme_name=3_15&ver=3" />
+    <link rel="stylesheet" type="text/css" href="https://my75p.com/p/mobile_css?item_id=oBFtTlYj&format=div&form_align=&label_align=&radio_float=&checkbox_float=&label_width=0&input_width=0&theme_name=3_15&ver=3" />
+    <link rel="stylesheet" type="text/css" href="https://my75p.com/css/form/myasp-ui-form.css?d=20250810224710">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* ご利用の流れセクション */
+        .flow-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .flow-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .flow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .flow-step:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            color: #5a6c7d;
+            font-size: 0.95rem;
+        }
+
+        .consultant-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .consultant-image img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .consultant-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .consultant-info h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .consultant-info p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* フォームセクション */
+        .form-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* フォームのカスタムスタイル */
+        .custom_form_container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            font-family: inherit;
+        }
+
+        .form_intro_text {
+            text-align: center;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 8px;
+            font-size: 16px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .input_unit {
+            margin-bottom: 20px;
+        }
+
+        .my_column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form_input_label {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            color: #2c3e50;
+        }
+
+        .form_input_label.required::after {
+            content: '必須';
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        ::placeholder {
+            color: #adb5bd;
+        }
+
+        .privacy_policy_consent {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .privacy_policy_consent label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .privacy_policy_consent input[type="checkbox"] {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+            accent-color: #667eea;
+        }
+
+        .privacy_policy_consent a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .privacy_policy_consent a:hover {
+            text-decoration: underline;
+        }
+
+        .form_input_submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .form_input_submit button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form_input_submit button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .form_input_submit button::after {
+            content: '→';
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .form_input_submit button:hover::after {
+            transform: translateX(5px);
+        }
+
+        .content_title {
+            display: none;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .flow-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .consultant-image img {
+                width: 150px;
+                height: 190px;
+            }
+            
+            .form-section {
+                position: static;
+            }
+        }
+
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .flow-step {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .flow-step:nth-child(1) { animation-delay: 0.1s; }
+        .flow-step:nth-child(2) { animation-delay: 0.2s; }
+        .flow-step:nth-child(3) { animation-delay: 0.3s; }
+        .flow-step:nth-child(4) { animation-delay: 0.4s; }
+        .flow-step:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>無料相談・お問い合わせ</h1>
+            <p>デジタル人材サービスに関するご相談を承っております</p>
+        </div>
+
+        <div class="main-content">
+            <!-- ご利用の流れセクション -->
+            <div class="flow-section">
+                <h2 class="flow-title">ご利用の流れ</h2>
+                
+                <div class="consultant-image">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/3312056a72ea0295ce444ae66f29b04d" alt="コンサルタント" />
+                    <div class="consultant-info">
+                        <h4>講師　橋本 由夏</h4>
+                        <p>お客様のニーズに合わせて最適なプランをご提案いたします</p>
+                    </div>
+                </div>
+
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>お問い合わせ</h3>
+                            <p>まずはお気軽にお問い合わせフォームまたはお電話にてご連絡ください。お客様のご要望を詳しくお聞かせください。</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>無料ヒアリング</h3>
+                            <p>専任コンサルタントがお客様の現状や課題、ご希望のプランについて詳しくヒアリングさせていただきます。</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>カリキュラム提案</h3>
+                            <p>ヒアリング内容を基に、お客様に最適なカリキュラムやプランをカスタマイズしてご提案いたします。</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>ご契約・準備</h3>
+                            <p>提案内容にご納得いただけましたら、正式にご契約を締結し、サービス開始に向けた準備を進めます。</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>サービス開始</h3>
+                            <p>いよいよサービス開始です。継続的なサポートで、お客様の目標達成を全面的にバックアップいたします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 問い合わせフォームセクション -->
+            <div class="form-section">
+                <h2 class="form-title">無料相談お申し込み</h2>
+                
+                <div class="custom_form_container">
+                    <div class="form_intro_text">
+                        30秒でご回答いただけます
+                    </div>
+
+                    <div class="content_form">
+                        <form action="https://my75p.com/p/r/oBFtTlYj" enctype="multipart/form-data" id="UserItemForm" class="myForm" method="post" accept-charset="utf-8">
+                            <input type="hidden" name="_method" value="POST"/>
+
+                            <div class="input text input_unit required">
+                                <div class="my_column">
+                                    <label for="Userzip" class="form_input_label required">相談内容をご自由にお書きください</label>
+                                    <textarea name="data[User][zip]" id="Userzip" class="required" cols="30" rows="4" placeholder="ex. Copilotの研修・利活用促進に関するお問い合わせ"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="input text input_unit required">
+                                <div class="my_column">
+                                    <label for="Usercompany" class="form_input_label required">会社名</label>
+                                    <input name="data[User][company]" id="Usercompany" class="required" type="text" placeholder="例：〇〇株式会社"/>
+                                </div>
+                            </div>
+
+                            <div class="input text input_unit required">
+                                <div class="my_column">
+                                    <label for="Username1" class="form_input_label required">部署名</label>
+                                    <input name="data[User][name1]" id="Username1" class="required" type="text" placeholder="例：人事部研修課"/>
+                                </div>
+                            </div>
+
+                            <div class="input text input_unit required">
+                                <div class="my_column">
+                                    <label for="Username2" class="form_input_label required">お名前</label>
+                                    <input name="data[User][name2]" id="Username2" class="required" type="text" placeholder="例：山田 太郎"/>
+                                </div>
+                            </div>
+
+                            <div class="input text input_unit required">
+                                <div class="my_column">
+                                    <label for="Usermail" class="form_input_label required">メールアドレス</label>
+                                    <input name="data[User][mail]" id="Usermail" class="required" type="email" placeholder="例：example@abc.co.jp"/>
+                                    <p style="font-size:12px; color:#777; margin-top:5px;">会社アドレスをご入力ください（Gmail等フリーアドレスは不可）</p>
+                                </div>
+                            </div>
+
+                            <div class="input text input_unit required">
+                                <div class="my_column">
+                                    <label for="Userkana" class="form_input_label required">電話番号</label>
+                                    <input name="data[User][kana]" id="Userkana" class="required" type="tel" placeholder="例：07012345678（ハイフン不要）"/>
+                                    <p style="font-size:12px; color:#777; margin-top:5px;">メール誤りなどのエラー時に電話対応させて頂きます。</p>
+                                </div>
+                            </div>
+
+                            <div class="privacy_policy_consent required">
+                                <label>
+                                    <input type="checkbox" name="data[User][privacy_consent]" value="1" id="privacy_consent" class="required">
+                                    <span>
+                                        <a href="https://business.youseful.jp/privacy" target="_blank">プライバシーポリシー</a>に同意する
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="submit form_input_submit">
+                                <button type="submit">無料相談に申し込む</button>
+                            </div>
+
+                            <input type="hidden" id="server_url" value="https://my75p.com/"/>
+
+                            <!-- リファラ -->
+                            <input type="hidden" name="data[User][referer_form_url]" value="" class="UserRefererFormUrl"/>
+                            <input type="hidden" name="data[User][referer_url]" value="" class="UserRefererUrl"/>
+
+                            <script type="text/javascript">
+                                if (document.referrer.length != 0) {
+                                    if (document.getElementsByClassName("UserRefererUrl")) {
+                                        var user_referer_url = document.getElementsByClassName("UserRefererUrl");
+                                        for (var i = 0; i < user_referer_url.length; i++) {
+                                            user_referer_url[i].value = document.referrer;
+                                        }
+                                    } else if (document.getElementById("UserRefererUrl")) {
+                                        document.getElementById("UserRefererUrl").value = document.referrer;
+                                    }
+                                }
+
+                                if (document.getElementsByClassName("UserRefererFormUrl")) {
+                                    var user_referer_form_url = document.getElementsByClassName("UserRefererFormUrl");
+                                    for (var i = 0; i < user_referer_form_url.length; i++) {
+                                        user_referer_form_url[i].value = location.href;
+                                    }
+                                } else if (document.getElementById("UserRefererFormUrl")) {
+                                    document.getElementById("UserRefererFormUrl").value = location.href;
+                                }
+                            </script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
